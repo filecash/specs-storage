@@ -5,6 +5,7 @@ import (
 	"io"
 
 	"github.com/filecoin-project/go-state-types/abi"
+	"github.com/google/uuid"
 	"github.com/ipfs/go-cid"
 
 	proof "github.com/filecoin-project/specs-actors/actors/runtime/proof"
@@ -63,6 +64,6 @@ type Sealer interface {
 	// Removes all data associated with the specified sector
 	Remove(ctx context.Context, sector SectorRef) error
 
-	AddWorkerTask(ctx context.Context, ID uint64) error
-	GetWorkerWait(ctx context.Context, ID uint64) int
+	AddWorkerTask(ctx context.Context, ID uuid.UUID) error
+	GetWorkerWait(ctx context.Context, ID uuid.UUID) int
 }
