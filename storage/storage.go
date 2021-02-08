@@ -57,4 +57,6 @@ type Sealer interface {
 
 	// Removes all data associated with the specified sector
 	Remove(ctx context.Context, sector abi.SectorID) error
+	AddWorkerTask(ctx context.Context, ID uint64) error
+	GetWorkerWait(ctx context.Context, ID uint64) int
 }
