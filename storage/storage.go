@@ -23,7 +23,7 @@ type Storage interface {
 	//  storage are responsible for assigning sector IDs)
 	NewSector(ctx context.Context, sector SectorRef) error
 	// Add a piece to an existing *unsealed* sector
-	AddPiece(ctx context.Context, sector SectorRef, pieceSizes []abi.UnpaddedPieceSize, newPieceSize abi.UnpaddedPieceSize, pieceData Data) (abi.PieceInfo, error)
+	AddPiece(ctx context.Context, sector SectorRef, pieceSizes []abi.UnpaddedPieceSize, newPieceSize abi.UnpaddedPieceSize, pieceData Data, group string) (abi.PieceInfo, error)
 }
 
 type Prover interface {
